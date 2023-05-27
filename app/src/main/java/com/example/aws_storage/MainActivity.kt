@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         val options = StorageListOptions.builder()
             .build()
 
-        var objects = "Objects: "
+        var objects = ""
         Amplify.Storage.list("", options,
             { result ->
                 result.items.forEach { item ->
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
     // Funkcija faila lejupielādei
     private fun downloadObject() {
         val file = File("/sdcard/Download/fileaws.txt")
-        Amplify.Storage.downloadFile("ExampleKey", file,
+        Amplify.Storage.downloadFile("ExampleKey2", file,
             {
                 textView.text = "Object is downloaded."
             },
